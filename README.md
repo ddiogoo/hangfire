@@ -37,3 +37,14 @@ Building Background Services in .NET with HangFire.
 - Resiliency:
     - What happens if a task fails?
     - What happens if a service crashes?
+
+## Windows Services
+
+- Pro:
+    - Easy to build;
+    - Windows will automatically manage lifecycle for you.
+
+- Cons:
+    - Limited to single machine/server;
+    - Not straight forward to do "on-demand" work;
+    - You're responsible for resiliency of individual tasks.
