@@ -23,3 +23,17 @@ Building Background Services in .NET with HangFire.
     - Examples:
         - Reports;
         - Resource Cleanup.
+
+## Considerations
+
+- Where are you hosting?
+    - Local:
+        - Windows Services;
+        - Inside existing client app.
+    - Web:
+        - ASP.NET Core app;
+        - Microsoft Azure.
+
+- Resiliency:
+    - What happens if a task fails?
+    - What happens if a service crashes?
