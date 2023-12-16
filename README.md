@@ -40,11 +40,22 @@ Building Background Services in .NET with HangFire.
 
 ## Windows Services
 
-- Pro:
+- Pros:
     - Easy to build;
     - Windows will automatically manage lifecycle for you.
 
 - Cons:
     - Limited to single machine/server;
     - Not straight forward to do "on-demand" work;
+    - You're responsible for resiliency of individual tasks.
+
+## ASP.NET Core Hosted Services
+
+- Pros:
+    - Easy to build;
+    - Runs inside of your existing ASP.NET Core Host;
+    - Automatically starts on app startup.
+
+- Cons:
+    - You're responsible for scheduling (with Quartz or custom process);
     - You're responsible for resiliency of individual tasks.
