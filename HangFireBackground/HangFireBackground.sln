@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tatics.WindowsServices", "Tatics.WindowsServices\Tatics.WindowsServices.csproj", "{5E3254FC-AD09-4FC6-8872-ECA0820131A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatics.WindowsServices", "Tatics.WindowsServices\Tatics.WindowsServices.csproj", "{5E3254FC-AD09-4FC6-8872-ECA0820131A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tatics.AspNetCore", "Tatics.AspNetCore\Tatics.AspNetCore.csproj", "{8090AACB-56A8-4864-9D89-5908EC970773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatics.AspNetCore", "Tatics.AspNetCore\Tatics.AspNetCore.csproj", "{8090AACB-56A8-4864-9D89-5908EC970773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHostedServiceQuartz", "WebHostedServiceQuartz\WebHostedServiceQuartz.csproj", "{65DD691E-7299-4EF5-BAD9-628B0BB1ADA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8090AACB-56A8-4864-9D89-5908EC970773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8090AACB-56A8-4864-9D89-5908EC970773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8090AACB-56A8-4864-9D89-5908EC970773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65DD691E-7299-4EF5-BAD9-628B0BB1ADA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65DD691E-7299-4EF5-BAD9-628B0BB1ADA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65DD691E-7299-4EF5-BAD9-628B0BB1ADA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65DD691E-7299-4EF5-BAD9-628B0BB1ADA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
