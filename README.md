@@ -59,3 +59,14 @@ Building Background Services in .NET with HangFire.
 - Cons:
     - You're responsible for scheduling (with Quartz or custom process);
     - You're responsible for resiliency of individual tasks.
+
+## Quartz
+
+- Pros:
+    - Precise scheduling and timing!
+    - One off jobs as you want to schedule them;
+    - Separate "job server" so your app isn't doing dual duty.
+
+- Cons:
+    -  Locking into Quartz jobs;
+    - Additional configuration to tie into DI framework.
