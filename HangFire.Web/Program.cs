@@ -20,4 +20,14 @@ app.MapHangfireDashboard("/hangfire");
 
 app.MapGet("/", () => "Hello World!");
 
+app.MapGet("/pull", (IBackgroundJobClient client) =>
+{
+    var url = "https://consultwithgriff.com/rss.xml";
+    var directory = $"c:\\rss";
+    var filename = "consultwithgriff.json";
+    var tempPath = Path.Combine(directory, filename);
+
+    client.Enqueue<WebPuller>(p => p.GetRssItemUrlAsync(url, tempPath));
+});
+
 app.Run();
