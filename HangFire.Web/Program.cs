@@ -1,4 +1,6 @@
 using Hangfire;
+using HangFire.Web.Jobs;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
