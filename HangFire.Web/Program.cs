@@ -1,5 +1,5 @@
 using Hangfire;
-using HangFire.Web.Jobs;
+using HangFire.Web;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,14 +20,21 @@ app.MapHangfireDashboard("/hangfire");
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/pull", (IBackgroundJobClient client) =>
-{
-    var url = "https://consultwithgriff.com/rss.xml";
-    var directory = $"c:\\rss";
-    var filename = "consultwithgriff.json";
-    var tempPath = Path.Combine(directory, filename);
+var url = "https://consultwithgriff.com/rss.xml";
+var directory = $"c:\\rss";
+var filename = "consultwithgriff.json";
+var tempPath = Path.Combine(directory, filename);
 
-    client.Enqueue<WebPuller>(p => p.GetRssItemUrlAsync(url, tempPath));
+RecurringJob.AddOrUpdate<WebPuller>(
+    "pull-rss-feed", 
+    p => p.GetRssItemUrlAsync(url, tempPath), 
+    "* * * * *");
+
+RecurringJob.RemoveIfExists("pull-rss-feed");
+
+app.MapGet("/pull", () =>
+{
+    RecurringJob.TriggerJob("pull-rss-feed");
 });
 
 app.MapGet("/sync", (IBackgroundJobClient client) =>
